@@ -1,6 +1,6 @@
 import pytest
 
-from repin.repin import RequirementUpdater
+from updatereqspec.requirement_updater import RequirementUpdater
 
 
 @pytest.mark.parametrize(

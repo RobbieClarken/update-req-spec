@@ -7,7 +7,7 @@ from .requirement_updater import RequirementUpdater
 from .source_replacer import SourceReplacer
 
 
-def repin_file(filename, config):
+def update_file(filename, config):
     path = Path(filename)
     source = path.read_text()
     latest_version_finder = PipToolsLatestVersionFinder(config)
