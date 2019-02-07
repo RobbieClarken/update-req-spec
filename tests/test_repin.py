@@ -3,7 +3,7 @@ from textwrap import dedent
 import pytest
 
 from repin import exceptions, repin_file
-from repin.repin import Config
+from repin.config import Config
 
 
 def test_repin_raises_runtime_error_if_cant_find_install_requires(tmp_path):

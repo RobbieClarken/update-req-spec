@@ -1,4 +1,5 @@
-from repin.repin import Config, PipToolsLatestVersionFinder
+from repin.config import Config
+from repin.repin import PipToolsLatestVersionFinder
 
 
 def test_PipToolsLatestVersionFinder_uses_index_url(mocker):

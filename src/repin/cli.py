@@ -1,7 +1,8 @@
 import click
 
+from .config import Config
 from .exceptions import RepinException
-from .repin import Config, repin_file
+from .repin import repin_file
 
 
 @click.command()
