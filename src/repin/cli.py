@@ -1,5 +1,6 @@
 import click
 
+from .exceptions import RepinException
 from .repin import Config, repin_file
 
 
@@ -7,5 +8,9 @@ from .repin import Config, repin_file
 @click.option("--index-url")
 @click.argument("file")
 def main(file, index_url):
-    config = Config(cli_options={"--index-url": index_url})
-    repin_file(file, config)
+    cli_options = {"--index-url": index_url} if index_url else {}
+    config = Config(cli_options=cli_options)
+    try:
+        repin_file(file, config)
+    except RepinException as exc:
+        raise SystemExit(str(exc))

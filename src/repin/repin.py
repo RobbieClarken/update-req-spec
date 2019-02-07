@@ -5,6 +5,8 @@ import pkg_resources
 from piptools.repositories.pypi import PyPIRepository
 from piptools.scripts.compile import get_pip_command
 
+from .exceptions import PackageNotFound
+
 
 def repin_file(filename, config):
     path = Path(filename)
@@ -67,6 +69,8 @@ class PipToolsLatestVersionFinder:
         session = pip_command._build_session(pip_options)
         repo = PyPIRepository(pip_options, session)
         candidates = repo.find_all_candidates(requirement.name)
+        if len(candidates) == 0:
+            raise PackageNotFound(f"{requirement.name} not found")
         return sorted(candidates, key=lambda c: c.version)[-1].version.base_version
 
 
@@ -88,7 +92,7 @@ class SourceReplacer:
     def _text_after(self):
         lines = self._source.splitlines()[self._node.lineno - 1 :]
         lines[0] = lines[0][self._node.col_offset + 1 + len(self._node.s) :]
-        return "\n".join(lines)
+        return "\n".join(lines) + "\n"
 
 
 class InstallRequiresNodeFinder(ast.NodeVisitor):
