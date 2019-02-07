@@ -13,6 +13,6 @@ from repin.repin import RequirementUpdater
         ("app-xyz~=1.2", "app-xyz>=1.2,<4"),
     ],
 )
-def test_requirement_updater(mocker, init, final):
-    mocker.patch("repin.repin._get_latest_version", return_value="3.4")
-    assert RequirementUpdater(init).update() == final
+def test_requirement_updater(init, final):
+    mock_latest_version_finder = lambda requirement: "3.4"  # noqa
+    assert RequirementUpdater(init, mock_latest_version_finder).update() == final

@@ -3,6 +3,7 @@ from textwrap import dedent
 import pytest
 
 from repin import repin_file
+from repin.repin import Config
 
 
 def test_repin_raises_runtime_error_if_cant_find_install_requires(tmp_path):
@@ -18,7 +19,7 @@ def test_repin_raises_runtime_error_if_cant_find_install_requires(tmp_path):
         )
     )
     with pytest.raises(RuntimeError) as exc_info:
-        repin_file(str(setup_file))
+        repin_file(str(setup_file), Config())
     assert "could not find install_requires keyword" in str(exc_info.value)
 
 
@@ -38,7 +39,7 @@ def test_repin(tmp_path):
             )"""
         )
     )
-    repin_file(str(setup_file))
+    repin_file(str(setup_file), Config())
     expected_text = dedent(
         """\
         from setuptools import setup
@@ -69,7 +70,7 @@ def test_repin_when_requirements_on_same_line(tmp_path):
             )"""
         )
     )
-    repin_file(str(setup_file))
+    repin_file(str(setup_file), Config())
     expected_text = dedent(
         """\
         from setuptools import setup
