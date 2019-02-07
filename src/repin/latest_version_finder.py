@@ -22,5 +22,5 @@ class PipToolsLatestVersionFinder:
         repo = PyPIRepository(pip_options, session)
         candidates = repo.find_all_candidates(requirement.name)
         if len(candidates) == 0:
-            raise PackageNotFound(f"{requirement.name} not found")
+            raise PackageNotFound(f"could not find a package named {requirement.name}")
         return sorted(candidates, key=lambda c: c.version)[-1].version.base_version

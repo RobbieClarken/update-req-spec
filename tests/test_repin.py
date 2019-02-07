@@ -19,9 +19,9 @@ def test_repin_raises_runtime_error_if_cant_find_install_requires(tmp_path):
             """
         )
     )
-    with pytest.raises(RuntimeError) as exc_info:
+    with pytest.raises(exceptions.InvalidSetupFile) as exc_info:
         repin_file(str(setup_file), Config())
-    assert "could not find install_requires keyword" in str(exc_info.value)
+    assert "could not locate install_requires keyword in file" in str(exc_info.value)
 
 
 def test_repin(tmp_path):
@@ -108,4 +108,4 @@ def test_repin_raises_PackageNotFound_exception(tmp_path):
     )
     with pytest.raises(exceptions.PackageNotFound) as exc_info:
         repin_file(str(setup_file), Config())
-    assert "afdsknwfsda not found" in str(exc_info.value)
+    assert "could not find a package named afdsknwfsda" in str(exc_info.value)
