@@ -1,5 +1,5 @@
+from .repin import repin_file
+
+
 __version__ = "0.0.0"
-
-
-def repin(arg):
-    pass
+__all__ = ["repin_file"]
