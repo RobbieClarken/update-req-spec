@@ -17,7 +17,7 @@ version ranges up to date with new major releases can be tedious.
 `setup.py` so that the version specifications allow the latest major releases while retaining the
 minimum permitted versions. Then all you need to do is run your tests and publish a new release.
 
-For example, given:
+For example, if your `setup.py` contained:
 
 ```python
 from setuptools import setup
@@ -33,7 +33,7 @@ setup(
 )
 ```
 
-will be transformed to:
+after running `update-req-spec setup.py` it would become:
 
 ```python
 from setuptools import setup
@@ -54,7 +54,7 @@ setup(
 Install with [pipsi](https://github.com/mitsuhiko/pipsi):
 
 ```bash
-pipsi install update-req-sepc
+pipsi install update-req-spec
 ```
 
 or with pip:
@@ -69,7 +69,7 @@ python3 -m pip install update-req-spec
 update-req-spec setup.py
 ```
 
-If you use a private packge repository:
+If you use a private package repository:
 
 ```bash
 update-req-spec --index-url http://private-repo.example/ setup.py
