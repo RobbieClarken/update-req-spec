@@ -47,19 +47,27 @@ setup(
 
 ## Installation
 
+Install with [pipsi](https://github.com/mitsuhiko/pipsi):
+
+```bash
+pipsi install update-req-sepc
 ```
+
+or with pip:
+
+```bash
 python3 -m pip install update-req-spec
 ```
 
 ## Usage
 
-```
+```bash
 update-req-spec setup.py
 ```
 
 If you use a private packge repository:
 
-```
+```bash
 update-req-spec --index-url http://private-repo.example/ setup.py
 
 # or
