@@ -1,7 +1,7 @@
 import click
 
 from .config import Config
-from .exceptions import RepinException
+from .exceptions import UpdateReqSpecException
 from .update import update_file
 
 
@@ -13,5 +13,5 @@ def main(file, index_url):
     config = Config(cli_options=cli_options)
     try:
         update_file(file, config)
-    except RepinException as exc:
+    except UpdateReqSpecException as exc:
         raise SystemExit(str(exc))

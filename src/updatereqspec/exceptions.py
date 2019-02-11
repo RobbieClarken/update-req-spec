@@ -1,10 +1,10 @@
-class RepinException(Exception):
+class UpdateReqSpecException(Exception):
     pass
 
 
-class InvalidSetupFile(RepinException):
+class InvalidSetupFile(UpdateReqSpecException):
     pass
 
 
-class PackageNotFound(RepinException):
+class PackageNotFound(UpdateReqSpecException):
     pass
