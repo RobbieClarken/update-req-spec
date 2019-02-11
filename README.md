@@ -1,5 +1,7 @@
 # update-req-spec
 
+[![Build Status](https://travis-ci.org/RobbieClarken/update-req-spec.svg?branch=master)](https://travis-ci.org/RobbieClarken/update-req-spec)
+
 Update Python requirements in a setup.py file to permit latest available versions.
 
 ## Motivation
