@@ -17,4 +17,15 @@ setup(
     packages=["updatereqspec"],
     install_requires=["click", "pip-tools"],
     entry_points={"console_scripts": ["update-req-spec=updatereqspec.cli:main"]},
+    classifiers=[
+        "Development Status :: 5 - Production/Stable",
+        "Intended Audience :: Developers",
+        "Intended Audience :: Developers",
+        "License :: OSI Approved :: MIT License",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: Implementation :: CPython",
+        "Topic :: Software Development :: Libraries",
+        "Topic :: Utilities",
+    ],
 )
