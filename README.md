@@ -1,6 +1,8 @@
 # update-req-spec
 
 [![Build Status](https://travis-ci.org/RobbieClarken/update-req-spec.svg?branch=master)](https://travis-ci.org/RobbieClarken/update-req-spec)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/RobbieClarken/update-req-spec/blob/master/LICENSE)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
 
 Update Python requirements in a setup.py file to permit latest available versions.
 
