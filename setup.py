@@ -9,8 +9,12 @@ with open("src/updatereqspec/__init__.py") as file:
 
 setup(
     name="update-req-spec",
-    version=version,
+    description="Update Python requirements in a setup.py file to permit latest available versions",
+    long_description=open("README.md").read(),
+    long_description_content_type="text/markdown",
+    url="https://github.com/RobbieClarken/update-req-spec",
     license="MIT",
+    version=version,
     author="Robbie Clarken",
     author_email="robert.clarken@reece.com.au",
     package_dir={"": "src"},
